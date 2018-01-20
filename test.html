@@ -1,0 +1,33 @@
+<html lang="tr"> 
+<script type="text/javascript"> 
+var tarih1 = new Date(2018, 7, 12, 9, 0); // 2014 Yılının 7. Ayının 12. Günü Saat 9:00 AM 
+var tarih2 = new Date(2018, 7, 12, 17, 0); // 2014 Yılının 7. Ayının 13. Günü Saat öğleden sonra 7:00 PM (19.00) 
+
+var fark = tarih2 - tarih1; 
+// fark burada milisaniye olarak getiriliyor. 
+
+// bu method milisaniye farkını saat olarak gösteriyor. "34 saat" gibi. 
+    function saat(t) { 
+    var ch = 60 * 60 * 1000; 
+    h = Math.floor(t / ch); 
+    return h;
+
+    } 
+
+    var gunler = new Array("Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma");
+
+    if ((saat(fark) * 5) - 1  < 45) {
+        
+        console.log("Haftada 6 Gün Çalışacaklar");
+
+        gunler.push("Cumartesi");
+    }
+    else{
+        
+        console.log("Haftada 5 Gün Çalışacaklar");
+    }
+
+    console.log(gunler);
+console.log(saat(fark)-1);
+
+</script> </head></html>
